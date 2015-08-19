@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Multi-page template</title>
+	<link rel="stylesheet" href="css/jquery.mobile.flatui.css">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
+	<link rel="stylesheet" href="bootstrap/css/app.css"/>
+	
+</head>
+
+<body>
+
+<!-- Start of first page: #login-->
+<div data-role="page" id="login">
+
+	<div role="main">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12" style="text-align:center">
+					<img style="margin-top:-50px; width:320px;" src="img/angular-js.png"/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="row transparent-box">
+					<div class="col-xs-12">
+						<form class="form" method="post" id="loginUser">
+							<div id="msgBox"></div>
+							<div class="form-group">
+								<input type="text" class="form-control transparent" name="username" id="username" placeholder="Username"/>
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control transparent" name="password" id="password" placeholder="Password"/>
+							</div>
+							<div class="form-group">
+								<input type="submit" class="form-control transparent" name="submit" value="Login"/>
+							</div>
+						</form>
+					</div>
+					<div class="col-xs-6 form-below-left">
+						<a href="#newUser">New User?</a>
+					</div>
+					<div class="col-xs-6 form-below-right">
+						<a href="#forgot">Forgot Password?</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+		<!---<p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>--->
+	</div><!-- /content -->
+
+</div><!-- /page one -->
+
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="newUser" data-theme="a">
+
+	<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12" style="text-align:center">
+					<img style="margin-top:-50px; width:320px;" src="img/angular-js.png"/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="row transparent-box">
+					<div class="col-xs-12">
+						
+						<form class="form" id="register" method="post" action="">
+							<div id="message"></div>
+							<div class="form-group">
+								<select class="form-control transparent" name="type" id="type">
+									<option value="" disabled selected>User Type</option>
+									<option value="parent">Parent</option>
+									<option value="child">Child</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control transparent" name="username" id="username" placeholder="Username"/>
+							</div>
+							<div class="form-group">
+								<input type="email" class="form-control transparent" name="email" id="email" placeholder="Eamil"/>
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control transparent" name="password" id="password" placeholder="Password"/>
+							</div>
+							<div class="form-group">
+								<input type="submit" class="form-control transparent" name="submit" value="Register"/>
+							</div>
+						</form>
+					</div>
+					<div class="col-xs-6 form-below-left">
+						<a href="#login" data-direction="reverse">Login</a>
+					</div>
+					<div class="col-xs-6 form-below-right">
+					
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+</div><!-- /page two -->
+
+<!-- Start of page: #forgot -->
+<div data-role="page" id="verify" data-theme="a">
+
+	<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12" style="text-align:center">
+					<img style="margin-top:-50px; width:320px;" src="img/angular-js.png"/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="row transparent-box">
+					<div class="col-xs-12">
+						<form class="form" method="post" id="verifyUser">
+							<div id="vmsgBox"></div>
+							<div class="form-group">
+								<label>Please check your E-mail to get verification code.</label>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control transparent" name="tocken" id="tocken" placeholder="Enter Your verification code here..."/>
+							</div>
+							<div class="form-group">
+								<input type="submit" class="form-control transparent" name="submit" value="Verify"/>
+							</div>
+						</form>
+					</div>
+					<div class="col-xs-6 form-below-left">
+						<a href="#login" data-direction="reverse">Login</a>
+					</div>
+					<div class="col-xs-6 form-below-right">
+						<a href="#newUser">New User?</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+</div><!-- /page forgot -->
+
+<!-- Start of page: #forgot -->
+<div data-role="page" id="forgot" data-theme="a">
+
+	<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12" style="text-align:center">
+					<img style="margin-top:-50px; width:320px;" src="img/angular-js.png"/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="row transparent-box">
+					<div class="col-xs-12">
+						<form class="form" method="post" id="recover">
+							<div id="rmsgBox"></div>
+							<div class="form-group">
+								<input type="text" class="form-control transparent" name="email" id="email" placeholder="E-mail address"/>
+							</div>
+							<div class="form-group">
+								<input type="submit" class="form-control transparent" name="submit" value="Recover"/>
+							</div>
+						</form>
+					</div>
+					<div class="col-xs-6 form-below-left">
+						<a href="#login" data-direction="reverse">Login</a>
+					</div>
+					<div class="col-xs-6 form-below-right">
+						<a href="#newUser">New User?</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+</div><!-- /page forgot -->
+
+<!-- Start of page: #home -->
+<div data-role="page" id="home" data-theme="a">
+	<div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push">
+		<div class="list-group" ui-turn-off="uiSidebarLeft">
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-plus" href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Number<i class="fa fa-plus pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-menu" href="#list_numbers">All Numbers<i class="fa fa-list pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-location" href="#locations">Locations<i class="fa fa-map-marker pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-calendar" href="#help">Help<i class="fa fa-question pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-settings" href="#settings">Settings<i class="fa fa-cog pull-right"></i></a>
+			<!--<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-settings" id="logout">Logout<i class="fa fa-cog pull-right"></i></a>-->
+		</div>
+	</div>
+	
+	<div data-role="header">
+		  <a data-iconpos="notext" data-role="button" data-icon="home" title="Home">Home</a>
+		  
+		  <a data-iconpos="notext" href="#panel" data-role="button" data-icon="flat-menu"></a>
+	</div>
+	
+	<div role="main" class="ui-content">
+	</div>
+</div>
+
+<!-- Start of page: #list_numbers -->
+<div data-role="page" id="list_numbers" data-theme="a">
+	<div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push">
+		<div class="list-group" ui-turn-off="uiSidebarLeft">
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-plus" href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Number<i class="fa fa-plus pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-menu" href="#list_numbers">All Numbers<i class="fa fa-list pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-location" href="#locations">Locations<i class="fa fa-map-marker pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-calendar" href="#help">Help<i class="fa fa-question pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-settings" href="#settings">Settings<i class="fa fa-cog pull-right"></i></a>
+		</div>
+	</div>
+	
+	<div data-role="header">
+		  <a data-iconpos="notext" data-role="button" data-icon="home" title="Home">Home</a>
+		  
+		  <a data-iconpos="notext" href="#panel" data-role="button" data-icon="flat-menu"></a>
+	</div>
+	
+	<div role="main" class="ui-content">
+	</div>
+</div>
+
+<!-- Start of page: #locations -->
+<div data-role="page" id="locations" data-theme="a">
+	<div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push">
+		<div class="list-group" ui-turn-off="uiSidebarLeft">
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-plus" href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Number<i class="fa fa-plus pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-menu" href="#list_numbers">All Numbers<i class="fa fa-list pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-location" href="#locations">Locations<i class="fa fa-map-marker pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-calendar" href="#help">Help<i class="fa fa-question pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-settings" href="#settings">Settings<i class="fa fa-cog pull-right"></i></a>
+		</div>
+	</div>
+	
+	<div data-role="header">
+		  <a data-iconpos="notext" data-role="button" data-icon="home" title="Home">Home</a>
+		  
+		  <a data-iconpos="notext" href="#panel" data-role="button" data-icon="flat-menu"></a>
+	</div>
+	
+	<div role="main" class="ui-content">
+	</div>
+</div>
+
+
+<!-- Start of page: #help -->
+<div data-role="page" id="help" data-theme="a">
+	<div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push">
+		<div class="list-group" ui-turn-off="uiSidebarLeft">
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-plus" href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Number<i class="fa fa-plus pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-menu" href="#list_numbers">All Numbers<i class="fa fa-list pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-location" href="#locations">Locations<i class="fa fa-map-marker pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-calendar" href="#help">Help<i class="fa fa-question pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-settings" href="#settings">Settings<i class="fa fa-cog pull-right"></i></a>
+		</div>
+	</div>
+	
+	<div data-role="header">
+		  <a data-iconpos="notext" data-role="button" data-icon="home" title="Home">Home</a>
+		  
+		  <a data-iconpos="notext" href="#panel" data-role="button" data-icon="flat-menu"></a>
+	</div>
+	
+	<div role="main" class="ui-content">
+	</div>
+</div>
+
+<!-- Start of page: #settings -->
+<div data-role="page" id="settings" data-theme="a">
+	<div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push">
+		<div class="list-group" ui-turn-off="uiSidebarLeft">
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-plus" href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Number<i class="fa fa-plus pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-menu" href="#list_numbers">All Numbers<i class="fa fa-list pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-location" href="#locations">Locations<i class="fa fa-map-marker pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-calendar" href="#help">Help<i class="fa fa-question pull-right"></i></a>
+			<a class="list-group-item ui-btn ui-btn-icon-right ui-icon-flat-settings" href="#settings">Settings<i class="fa fa-cog pull-right"></i></a>
+		</div>
+	</div>
+	
+	<div data-role="header">
+		  <a data-iconpos="notext" data-role="button" data-icon="home" title="Home">Home</a>
+		  
+		  <a data-iconpos="notext" href="#panel" data-role="button" data-icon="flat-menu"></a>
+	</div>
+	
+	<div role="main" class="ui-content">
+		<h3>Settings</h3>
+	</div>
+</div>
+
+<!-- Start of third page: #popup -->
+<div data-role="page" id="popup">
+
+	<div data-role="header" data-theme="b">
+		<h1>Add Numbers</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<form class="form ng-pristine ng-valid" ng-submit="submit()">
+			<div class="form-group">
+				<input type="number" class="form-control transparent ng-pristine ng-valid ng-touched" name="number" id="number" placeholder="Enter Number">
+			</div>
+			<div class="form-group">
+				<input type="submit" class="form-control transparent" name="submit" value="Add Number">
+			</div>
+		</form>
+	</div><!-- /content -->
+
+	<!---<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page popup -->
+
+</body>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/submit.js"></script>
+	<script src="js/jstorage.js"></script>
+	<script src="js/json2.js"></script>
+	<script src="asset/js/index.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	
+	<script src="bootstrap/js/bootstrap.js"></script>
+</html>
